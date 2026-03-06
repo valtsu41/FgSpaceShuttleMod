@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+  
+    <path>TDRS_demo.ac</path>
+    <nopreview/>
+		
+	 <effect>
+	    <inherits-from>Effects/space</inherits-from>
+	    <object-name>black_krinkle</object-name>
+	    <object-name>shiny_panel</object-name>
+	    <object-name>tex_01</object-name>
+	    <object-name>tex_02</object-name>
+	 </effect>
+
+	 <effect>
+	   <inherits-from>Effects/space-combined</inherits-from>
+	   <object-name>fixture_frame</object-name>
+	 </effect>
+	   
+   <!-- Offsets here should correspond to the attachment point coordinates with respect -->
+   <!-- to RMS origin, as the model will be handed over to the unsecured one with these-->
+   <!-- coords -->
+
+    <offsets>
+       <x-m> 11.58 </x-m>
+       <y-m>  2.09 </y-m>
+       <z-m> -1.74 </z-m>
+    </offsets>
+
+</PropertyList>

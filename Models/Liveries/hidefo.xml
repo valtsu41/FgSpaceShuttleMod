@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    <sim>
+        <model>
+			<livery>
+				<name type="string">HD Resolution and Orange Foam ET</name>
+				<index type="int">3</index>
+				<texture>spstob_1_hd.dds</texture>
+			</livery>
+			<liveryet>
+				<name type="string">HD Resolution and Orange Foam ET</name>
+				<index type="int">3</index>
+				<texture>Liveries/etall.png</texture>
+			</liveryet>
+        </model>
+    </sim>
+</PropertyList>
