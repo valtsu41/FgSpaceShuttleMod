@@ -359,5 +359,3 @@ Systems/thrust_vectoring.xml -text
 /shuttle.xml -text
 /thumbnail.jpg -text svneol=unset#image/jpeg
 *.dds filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.ac filter=lfs diff=lfs merge=lfs -text
