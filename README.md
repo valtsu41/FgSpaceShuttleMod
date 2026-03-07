@@ -6,9 +6,9 @@ List of current modifications:
 - Separate display update rate setting for displays used as PFDs
 - Improved some checklist conditions
 - Following canvas dialogs now work even when paused
-    - Propellant
-    - Shuttle view manager
-    - Trajectory map
+    - Propellant
+    - Shuttle view manager
+    - Trajectory map
 - Radiators will not overcool freon
 - Mission control HAC callouts
 - Experimental new landing sites
