@@ -1,6 +1,7 @@
 # FlightGear Space Shuttle Utility mod
 This is a mod for the FlightGear Space Shuttle.
 Original code can be found at https://sourceforge.net/projects/fgspaceshuttledev/ (on the development branch).
+This repository has a separate Git history due to some very large files present in the main history.
 
 List of current modifications:
 - Separate display update rate setting for displays used as PFDs
@@ -16,4 +17,5 @@ List of current modifications:
 - Fixed INRTL ADI yaw
 
 ## Installation
-Installation works like with any other FG aircraft from GitHub.
+Because some files in this repository are too large to be normal GitHub tracked files, this repository uses Git LFS. You need to have it set up correctly for git cloning to work.
+Downloading the repository as a zip file and then unzipping it in your aircraft directory should work as usual. Make sure to rename the directory to `SpaceShuttle`.
