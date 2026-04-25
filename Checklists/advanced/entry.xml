@@ -2,333 +2,337 @@
 
   <title>Entry advanced</title>  
   
-  <item>
-    <name>EI-5:00 transition to GNC OPS 304</name>
-  </item>
-  
-  <item>
-    <name>verify correct LVLH attitude</name>
-    <value>CHECKED</value>
-  </item>
+  <page>
+    <item>
+      <name>EI-5:00 transition to GNC OPS 304</name>
+    </item>
+    
+    <item>
+      <name>verify correct LVLH attitude</name>
+      <value>CHECKED</value>
+    </item>
 
-  <item>
-    <name>PITCH ROLL/YAW mode</name>
-    <value>AUTO</value>
-    <condition>
-      <and>
+    <item>
+      <name>PITCH ROLL/YAW mode</name>
+      <value>AUTO</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/ap/automatic-pitch-control</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/ap/automatic-roll-control</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+    
+    <item>
+      <name>GNC major mode</name>
+      <value>OPS 304 PRO</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/ap/automatic-pitch-control</property>
+          <property>/fdm/jsbsim/systems/dps/major-mode</property>
+          <value>304</value>
+        </equals>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>load HORIZ SIT program</name>
+      <value>SPEC 50 PRO</value>
+    </item>
+
+    <item>
+      <name>D=11: verify DRAG H output on HORIZ SIT</name>
+      <value>CHECKED</value>
+    </item>
+
+    <!-- TOFIX: this cannot be display as our SSME repositionning is not
+        standard, we need TVC valves open whereas they should be closed
+        according to checklist (they're opened post-landing in OPS9) -->
+
+    <!--
+    <item>
+      <name>M=19: verify MPS/TVC isolation valves</name>
+      <value>CLOSED</value>
+      <condition>
+        <and>
+    <equals>
+      <property>/fdm/jsbsim/systems/apu/apu/tvc-isolation-valve-status</property>
+      <value>0</value>
+    </equals>
+    <equals>
+      <property>/fdm/jsbsim/systems/apu/apu[1]/tvc-isolation-valve-status</property>
+      <value>0</value>
+    </equals>
+    <equals>
+      <property>/fdm/jsbsim/systems/apu/apu[2]/tvc-isolation-valve-status</property>
+      <value>0</value>
+    </equals>	
+        </and>
+      </condition>
+    </item>
+    -->
+    <item>
+      <name>M=15: verify NAVAIDS (radar alt. MLS, TACAN)</name>
+      <value>CHECKED</value>
+    </item>
+    
+    
+    <item>
+      <name>M=12: set radiator bypass valves to</name>
+      <value>AUTO</value>
+      <condition>
+        <and>
+    <equals>
+      <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
+      <value>1</value>
+    </equals>
+    <equals>
+      <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
+      <value>1</value>
+    </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>M=12: set radiator controllers loop to</name>
+      <value>AUTO B</value>
+      <condition>
+        <and>
+    <equals>
+      <property>/fdm/jsbsim/systems/atcs/rad-controller-1-status</property>
+      <value>-1</value>
+    </equals>
+          <equals>
+      <property>/fdm/jsbsim/systems/atcs/rad-controller-2-status</property>
+      <value>-1</value>
+    </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>M=10: verify SPD BK</name>
+      <value>81%</value>
+    </item>
+  </page>
+
+  <page>
+    <item>
+      <name>M=7: verify and incorporate TACAN</name>
+      <value>ITEM 19 EXEC</value>
+    </item>
+
+    <item>
+      <name>M=5: L/R AIR DATA PROBE</name>
+      <value>DEPLOYED</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/air-data-left-pos</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/air-data-right-pos</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>M&gt;2.5: ADTA data verified and incoporated in G+C</name>
+      <value>ITEM 25 EXEC</value>
+      <value>ITEM 28 EXEC</value>
+    </item>
+    
+    <item>
+      <name>M=2.7: verify APUs</name>
+      <value>CHECKED</value>
+    </item>
+    
+    <item>
+      <name>M=2.7: HUDs power</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/hud/cmd-pwr-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/hud/plt-pwr-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>    
+    </item>
+
+    <item>
+      <name>Terminal area energy management</name>
+    </item>
+
+    <item>
+      <name>M&lt;1: verify CDR flight controller power</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/fcs/controller-power-cdr</property>
+    <value>1</value>
+        </equals>
+      </condition>      
+    </item>
+
+    <item>
+      <name>M&lt;1: PITCH ROLL/YAW mode</name>
+      <value>CSS</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/ap/css-pitch-control</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/ap/css-roll-control</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>M&lt;1: verify SPD BK CMD vs POS</name>
+      <value>CHECKED</value>
+    </item>
+
+    <item>
+      <name>M&lt;1: verify NWS</name>
+      <value>ON</value>
+    </item>
+
+    <item>
+      <name>H=15K: verify MLS acquisition</name>
+      <value>CHECKED</value>
+    </item>
+
+
+    <item>
+      <name>Final approach and landing</name>
+    </item>
+
+    <item>
+      <name>H=10K: A/L mode</name>
+      <value>FLASHING</value>
+    </item>
+
+    <item>
+      <name>H=2K: landing gear</name>
+      <value>ARM</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/landing/landing-gear-arm-cmd</property>
           <value>1</value>
         </equals>
+      </condition>    
+    </item>
+    
+
+    <item>
+      <name>H=300: landing gear</name>
+      <value>DN</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/ap/automatic-roll-control</property>
+          <property>/fdm/jsbsim/gear/gear-pos-norm</property>
           <value>1</value>
         </equals>
-      </and>
-    </condition>
-  </item>
-  
-  <item>
-    <name>GNC major mode</name>
-    <value>OPS 304 PRO</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/dps/major-mode</property>
-        <value>304</value>
-      </equals>
-    </condition>
-  </item>
+      </condition>    
+    </item>
 
+    <item>
+      <name>V=195 KEAS: drag chute </name>
+      <value>ARM and DPY</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/controls/shuttle/drag-chute-arm</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/controls/shuttle/drag-chute-deploy</property>
+            <value>1</value>
+          </equals>      
+        </and>
+      </condition>    
+    </item>
 
-  <item>
-    <name>load HORIZ SIT program</name>
-    <value>SPEC 50 PRO</value>
-  </item>
+    <item>
+      <name>V=185 KEAS</name>
+      <value>DEROTATE</value>
+    </item>
 
-  <item>
-    <name>D=11: verify DRAG H output on HORIZ SIT</name>
-    <value>CHECKED</value>
-  </item>
-
-  <!-- TOFIX: this cannot be display as our SSME repositionning is not
-       standard, we need TVC valves open whereas they should be closed
-       according to checklist (they're opened post-landing in OPS9) -->
-
-  <!--
-  <item>
-    <name>M=19: verify MPS/TVC isolation valves</name>
-    <value>CLOSED</value>
-    <condition>
-      <and>
-	<equals>
-	  <property>/fdm/jsbsim/systems/apu/apu/tvc-isolation-valve-status</property>
-	  <value>0</value>
-	</equals>
-	<equals>
-	  <property>/fdm/jsbsim/systems/apu/apu[1]/tvc-isolation-valve-status</property>
-	  <value>0</value>
-	</equals>
-	<equals>
-	  <property>/fdm/jsbsim/systems/apu/apu[2]/tvc-isolation-valve-status</property>
-	  <value>0</value>
-	</equals>	
-      </and>
-    </condition>
-  </item>
-  -->
-  <item>
-    <name>M=15: verify NAVAIDS (radar alt. MLS, TACAN)</name>
-    <value>CHECKED</value>
-  </item>
-  
-  
-  <item>
-    <name>M=12: set radiator bypass valves to</name>
-    <value>AUTO</value>
-    <condition>
-      <and>
-	<equals>
-	  <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
-	  <value>1</value>
-	</equals>
-	<equals>
-	  <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
-	  <value>1</value>
-	</equals>
-      </and>
-    </condition>
-  </item>
-
-  <item>
-    <name>M=12: set radiator controllers loop to</name>
-    <value>AUTO B</value>
-    <condition>
-      <and>
-	<equals>
-	  <property>/fdm/jsbsim/systems/atcs/rad-controller-1-status</property>
-	  <value>-1</value>
-	</equals>
+    <item>
+      <name>nose gear touchdown: depress SRB SEP</name>
+      <value>MAN/AUTO</value>
+      <condition>
         <equals>
-	  <property>/fdm/jsbsim/systems/atcs/rad-controller-2-status</property>
-	  <value>-1</value>
-	</equals>
-      </and>
-    </condition>
-  </item>
+          <property>/controls/shuttle/srb-separation-mode</property>
+          <value>true</value>
+        </equals>
+      </condition>    
+    </item>
 
-  <item>
-    <name>M=10: verify SPD BK</name>
-    <value>81%</value>
-  </item>
+    <item>
+      <name>verify HYD BK isolation valves</name>
+      <value>OPEN</value>
+      <condition>
+        <and>
+    <equals>
+            <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-1-status</property>
+      <value>1</value>
+    </equals>
+    <equals>
+            <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-2-status</property>
+      <value>1</value>
+    </equals>
+    <equals>
+            <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-3-status</property>
+      <value>1</value>
+    </equals>	
+        </and>
+      </condition>
+    </item>
 
-  <item>
-    <name>M=7: verify and incorporate TACAN</name>
-    <value>ITEM 19 EXEC</value>
-  </item>
-
-  <item>
-    <name>M=5: L/R AIR DATA PROBE</name>
-    <value>DEPLOYED</value>
-    <condition>
-      <and>
+    <item>
+      <name>V&lt;120 KGS or 5K remaining</name>
+      <value>BRAKE (-0.3g)</value>
+    </item>
+    
+    <item>
+      <name>V=120 KGS: drag chute</name>
+      <value>JETT</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/navigation/air-data-left-pos</property>
+          <property>/controls/shuttle/drag-chute-jettison</property>
           <value>1</value>
         </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/navigation/air-data-right-pos</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
+      </condition>
+    </item>
 
-  <item>
-    <name>M&gt;2.5: ADTA data verified and incoporated in G+C</name>
-    <value>ITEM 25 EXEC</value>
-    <value>ITEM 28 EXEC</value>
-  </item>
-  
-  <item>
-    <name>M=2.7: verify APUs</name>
-    <value>CHECKED</value>
-  </item>
-  
-  <item>
-    <name>M=2.7: HUDs power</name>
-    <value>ON</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/electrical/hud/cmd-pwr-switch</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/electrical/hud/plt-pwr-switch</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>    
-  </item>
+    <item>
+      <name>V=40 KGS</name>
+      <value>BRAKE (-0.2g)</value>
+    </item>
 
-  <item>
-    <name>Terminal area energy management</name>
-  </item>
-
-  <item>
-    <name>M&lt;1: verify CDR flight controller power</name>
-    <value>ON</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/fcs/controller-power-cdr</property>
-	<value>1</value>
-      </equals>
-    </condition>      
-  </item>
-
-  <item>
-    <name>M&lt;1: PITCH ROLL/YAW mode</name>
-    <value>CSS</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/ap/css-pitch-control</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/ap/css-roll-control</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-
-  <item>
-    <name>M&lt;1: verify SPD BK CMD vs POS</name>
-    <value>CHECKED</value>
-  </item>
-
-  <item>
-    <name>M&lt;1: verify NWS</name>
-    <value>ON</value>
-  </item>
-
-  <item>
-    <name>H=15K: verify MLS acquisition</name>
-    <value>CHECKED</value>
-  </item>
-
-
-  <item>
-    <name>Final approach and landing</name>
-  </item>
-
-  <item>
-    <name>H=10K: A/L mode</name>
-    <value>FLASHING</value>
-  </item>
-
-  <item>
-    <name>H=2K: landing gear</name>
-    <value>ARM</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/landing/landing-gear-arm-cmd</property>
-        <value>1</value>
-      </equals>
-    </condition>    
-  </item>
-  
-
-  <item>
-    <name>H=300: landing gear</name>
-    <value>DN</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/gear/gear-pos-norm</property>
-        <value>1</value>
-      </equals>
-    </condition>    
-  </item>
-
-  <item>
-    <name>V=195 KEAS: drag chute </name>
-    <value>ARM and DPY</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/controls/shuttle/drag-chute-arm</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/controls/shuttle/drag-chute-deploy</property>
-          <value>1</value>
-        </equals>      
-      </and>
-    </condition>    
-  </item>
-
-  <item>
-    <name>V=185 KEAS</name>
-    <value>DEROTATE</value>
-  </item>
-
-  <item>
-    <name>nose gear touchdown: depress SRB SEP</name>
-    <value>MAN/AUTO</value>
-    <condition>
-      <equals>
-        <property>/controls/shuttle/srb-separation-mode</property>
-        <value>true</value>
-      </equals>
-    </condition>    
-  </item>
-
-  <item>
-    <name>verify HYD BK isolation valves</name>
-    <value>OPEN</value>
-    <condition>
-      <and>
-	<equals>
-          <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-1-status</property>
-	  <value>1</value>
-	</equals>
-	<equals>
-          <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-2-status</property>
-	  <value>1</value>
-	</equals>
-	<equals>
-          <property>/fdm/jsbsim/systems/landing/brake-isolation-valve-3-status</property>
-	  <value>1</value>
-	</equals>	
-      </and>
-    </condition>
-  </item>
-
-  <item>
-    <name>V&lt;120 KGS or 5K remaining</name>
-    <value>BRAKE (-0.3g)</value>
-  </item>
-  
-   <item>
-    <name>V=120 KGS: drag chute</name>
-    <value>JETT</value>
-    <condition>
-      <equals>
-        <property>/controls/shuttle/drag-chute-jettison</property>
-        <value>1</value>
-      </equals>
-    </condition>
-   </item>
-
-   <item>
-     <name>V=40 KGS</name>
-     <value>BRAKE (-0.2g)</value>
-   </item>
-
-   <item>
-     <name>orbiter stops: report to MCC</name>
-     <value>WHEELS STOP</value>
-   </item>
+    <item>
+      <name>orbiter stops: report to MCC</name>
+      <value>WHEELS STOP</value>
+    </item>
+  </page>
    
 </PropertyList>    

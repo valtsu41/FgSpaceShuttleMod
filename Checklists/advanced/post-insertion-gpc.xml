@@ -165,6 +165,9 @@
       </condition>
     </item>
 
+  </page>
+  <page>
+
     <item>
       <name>Payload bus activation</name>
     </item>
@@ -212,9 +215,6 @@
         </equals>
       </condition>
     </item>
-
-  </page>
-  <page>
     
     <item>
       <name>Aft station configuration</name>
@@ -393,7 +393,9 @@
         </and>
       </condition>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>SM GPC configuration</name>
     </item>
@@ -564,4 +566,3 @@
   </page>
   
 </PropertyList>
-

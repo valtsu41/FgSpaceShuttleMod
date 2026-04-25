@@ -127,7 +127,9 @@
         </equals>
       </condition>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>Ku-band antenna stowing</name>
     </item>
@@ -198,7 +200,9 @@
 	</equals>
       </condition>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>BFS in command of an IDP</name>
     </item>
@@ -576,7 +580,9 @@
         </equals>
       </condition>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>Close payload bay doors</name>
     </item>
@@ -774,4 +780,3 @@
   </page>
   
 </PropertyList>
-

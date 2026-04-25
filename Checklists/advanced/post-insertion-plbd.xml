@@ -204,7 +204,9 @@
         </and>
       </condition>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>Open payload bay doors</name>
     </item>
@@ -562,7 +564,9 @@
       <name>display GNC UNIV PTG (CRT 1)</name>
       <value>RESTORED</value>
     </item>
+  </page>
 
+  <page>
     <item>
       <name>Star tracker activation</name>
     </item>
@@ -813,4 +817,3 @@
   </page>
   
 </PropertyList>
-

@@ -192,8 +192,9 @@
         </equals>
       </condition>
     </item>
-    
-    
+  </page>
+
+  <page>
     <item>
       <name>Transition BFS GPC to GNC OPS 3</name>
     </item>
@@ -373,8 +374,9 @@
       <value>ITEM 22 EXEC</value>
       <value>ITEM 23 EXEC</value>
     </item>
+  </page>
 
-
+  <page>
     <item>
       <name>Star tracker deactivation</name>
     </item>
@@ -527,8 +529,9 @@
         </equals>
       </condition>
     </item>
-
+  </page>
     
+  <page>
     <item>
       <name>IMU/IMU alignment</name>
     </item>
@@ -592,4 +595,3 @@
   </page>
     
 </PropertyList>
-
