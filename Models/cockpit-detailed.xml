@@ -3696,7 +3696,7 @@
                 <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-circ-pump-pwr-sel</property>
                 <mapping>nasal</mapping>
                 <script>
-                    var modes = ['MNB', 'MNA'];
+                    var modes = ['MNC', 'MNB'];
                     return modes[arg[0]];
                 </script>
           </binding>
@@ -3742,7 +3742,7 @@
                 <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-circ-pump-pwr-sel</property>
                 <mapping>nasal</mapping>
                 <script>
-                    var modes = ['MNB', 'MNA'];
+                    var modes = ['MNA', 'MNC'];
                     return modes[arg[0]];
                 </script>
           </binding>

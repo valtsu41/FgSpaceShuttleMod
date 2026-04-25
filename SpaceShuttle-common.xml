@@ -2327,7 +2327,7 @@
    <aero>shuttle</aero>
    <author>Thorsten Renk (flight dynamics), Richard Harrison (cockpit and avionics), Gijs de Rooy (avionics), Chris Kuhn (cockpit), NASA, Jorge Pareja, Wayne Bragg and Herbert Wagner (3D)</author>
    <status>beta</status>
-   <minimum-fg-version type="string">2024.1</minimum-fg-version>
+   <minimum-fg-version type="string">2024.1</minimum-fg-version> 
    <rating>
     <FDM type="int">4</FDM>
     <systems type="int">5</systems>
@@ -2575,7 +2575,7 @@
     <path>Aircraft/SpaceShuttle/Models/submodels.xml</path>
    </submodels>
 
-   <checklists include="SpaceShuttle-checklists.xml"/>
+   <checklists include="Checklists/SpaceShuttle-checklists.xml"/>
 
    <view n="0">
     <internal archive="y">true</internal>

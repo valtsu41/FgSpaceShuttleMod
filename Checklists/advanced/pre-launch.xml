@@ -1,0 +1,462 @@
+<PropertyList>
+
+    <title>Pre-launch advanced</title>  
+
+    <item>
+      <name>Event timer</name>
+    </item>    
+
+    <item>
+      <name>set and start a countdown to 9:00</name>
+      <value>SET</value>
+      <condition>
+          <equals>
+            <property>/fdm/jsbsim/systems/timer/timer-set-sec</property>
+            <value>540</value>
+          </equals>
+      </condition>   
+    </item>  
+    
+    <item>
+      <name>Electrical systems check</name>
+    </item>
+
+    <item>
+      <name>T-8:00 connect essential buses to fuel cells</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess[1]/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess[2]/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>T-8:00 verify SSME controllers</name>
+      <value>POWERED</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/controller-power</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>   
+    </item>
+
+    <item>
+      <name>APU and hydraulics startup</name>
+    </item>
+
+    <item>
+      <name>T-6:15 water spray boiler N2 supply </name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>T-6:15 water spray boiler controller power</name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>T-6:15 water spray boiler controller heaters</name>
+      <value>A</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+
+    <item>
+      <name>T-6:15 hydraulic circulation pumps</name>
+      <value>GPC</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+     <item>
+      <name>T-6:15 verify APU fuel valves</name>
+      <value>CLOSED</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/fuel-valve-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/fuel-valve-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/fuel-valve-status</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>T-6:15 verify APU auto-shutdown</name>
+      <value>ENABLE</value>
+    </item>
+
+    <item>
+      <name>T-6:15 verify APU speed selection</name>
+      <value>NORMAL</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-speed-select</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-speed-select</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-speed-select</property>
+            <value>0</value>
+          </equals>          
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>T-6:15 verify APU operate switches</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-operate</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-operate</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-operate</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>T-6:15 verify hyd pump pressure</name>
+      <value>LOW</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-pump-pressure-select</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-pump-pressure-select</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-pump-pressure-select</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>T-6:15 APU controller power</name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-6:15 APU fuel valve</name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-6:15 ready to start indicator</name>
+      <value>READY</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-5:00 APU operate switches</name>
+      <value>START</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-operate</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-operate</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-operate</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>T-5:00 verify RPM</name>
+      <value>&gt; 58.000</value>
+      <condition>
+	<and>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-5:00 hyd pump pressure</name>
+      <value>NORM</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-5:00 verify hydraulic pressure</name>
+      <value>&gt; 2400 psi</value>
+      <condition>
+	<and>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>T-5:00 hydraulic circulation pumps</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-circ-pump-cmd</property>
+            <value>-1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-circ-pump-cmd</property>
+            <value>-1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-circ-pump-cmd</property>
+            <value>-1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>Flash evaporator</name>
+    </item>
+    
+    <item>
+      <name>T-5:00 heater for water feedlines </name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/fes-fdln-A-heater-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/fes-fdln-B-heater-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>Final preparations</name>
+    </item>
+
+    <item>
+      <name>T-3:25 verify main engine gimbal</name>
+      <value>FREE</value>
+    </item>
+
+    <item>
+      <name>T-2.00 start O2 flow, visor</name>
+      <value>CLOSED</value>
+    </item>
+    
+    <item>
+      <name>T-0:07 main engine ignition sequence (shift+i)</name>
+      <value>START </value>
+      <condition>
+	<and>
+          <greater-than>
+            <property>/controls/engines/engine/throttle</property>
+            <value>0.0</value>
+          </greater-than>
+	</and>
+      </condition>
+    </item>
+
+</PropertyList>

@@ -1,0 +1,95 @@
+<PropertyList>
+
+  <title>Ascent advanced</title>  
+
+  <item>
+    <name>Roll in LVLH</name>
+    <value>180</value>
+  </item>
+  
+  <item>
+    <name>M=0.76: verify Pc</name>
+    <value>REDUCED (70%)</value>
+  </item>
+
+  <item>
+    <name>M=1.24: verify Pc</name>
+    <value>NOMINAL (104%)</value>
+  </item>
+
+  <item>
+    <name>SRB at Pc50 + 5s</name>
+    <value>SEPARATED</value>
+  </item>
+
+  <item>
+    <name>TMECO estimation</name>
+    <value>STABLE</value>
+  </item>
+
+  <item>
+    <name>T+3:00 evap out temperature</name>
+    <value>60-70</value>
+  </item>
+
+  <item>
+    <name>VI=13.6K: roll to </name>
+    <value>HEADS UP</value>
+  </item>
+
+  <item>
+    <name>MECO</name>
+  </item>
+
+  <item>
+    <name>inertial velocity</name>
+    <value>26K</value>
+  </item>
+
+  <item>
+    <name>rotation rates</name>
+    <value>NULL</value>
+    <condition>
+      <and>
+	<less-than>
+	  <property>/fdm/jsbsim/velocities/q-rad_sec</property>
+	  <value>0.000174</value>
+	</less-than>
+	<greater-than>
+	  <property>/fdm/jsbsim/velocities/q-rad_sec</property>
+	  <value>-0.000174</value>
+	</greater-than>
+	<less-than>
+	  <property>/fdm/jsbsim/velocities/p-rad_sec</property>
+	  <value>0.000174</value>
+	</less-than>
+	<greater-than>
+	  <property>/fdm/jsbsim/velocities/p-rad_sec</property>
+	  <value>-0.000174</value>
+	</greater-than>
+	<less-than>
+	  <property>/fdm/jsbsim/velocities/r-rad_sec</property>
+	  <value>0.000174</value>
+	</less-than>
+	<greater-than>
+	  <property>/fdm/jsbsim/velocities/r-rad_sec</property>
+	  <value>-0.000174</value>
+	</greater-than>	
+      </and>
+    </condition>
+  </item>
+
+  
+  <item>
+    <name>TMECO+20s: external tank</name>
+    <value>SEPARATED</value>
+    <condition>
+      <equals>
+        <property>/controls/shuttle/ET-static-model</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </item>
+  
+
+</PropertyList>    

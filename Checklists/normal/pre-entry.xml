@@ -1,0 +1,290 @@
+<PropertyList>
+  
+    <title>Pre-entry</title>  
+
+    <item>
+      <name>Prepare forward RCS</name>
+    </item>
+
+    <item>
+      <name>forward RCS fuel</name>
+      <value>DUMP</value>
+      <condition>
+	<or>
+	  <equals>
+            <property>/fdm/jsbsim/propulsion/tank[12]/contents-lbs</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/propulsion/tank[13]/contents-lbs</property>
+            <value>0</value>
+          </equals>
+	</or>
+      </condition>
+    </item>
+
+    <item>
+      <name>forward RCS manifold valves</name>
+      <value>CLOSED</value>
+    </item>
+
+    <item>
+      <name>Start remaining APUs</name>
+    </item>
+
+    <item>
+      <name>APU controller power</name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-controller-power</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>APU fuel valve</name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/fuel-valve-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>set water spray boiler controller power </name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>water spray boiler N2 flow </name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>Ready to start indicator</name>
+      <value>READY</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-ready-to-start-sample-hold</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>Operate switch</name>
+      <value>START</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-operate</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-operate</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-operate</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+
+    <item>
+      <name>verify RPM </name>
+      <value>> 58.000</value>
+      <condition>
+	<and>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/apu-rpm</property>
+            <value>58000</value>
+          </greater-than>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>hyd pump pressure</name>
+      <value>HIGH</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-pump-pressure-select</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>verify hydraulic pressure </name>
+      <value>> 2400 psi</value>
+      <condition>
+	<and>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+          <greater-than>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-pressure-psia</property>
+            <value>2400</value>
+          </greater-than>
+	</and>
+      </condition>     
+    </item>
+
+
+
+    <item>
+      <name>set water spray boiler controller power </name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>set water spray boiler N2 valves </name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-N2-valve-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>Control mode</name>
+    </item>
+
+    <item>
+      <name>DAP selection (transit to MM 304)</name>
+      <value>AEROJET</value>
+      <condition>
+	<or>
+          <equals>
+            <property>/fdm/jsbsim/systems/fcs/control-mode</property>
+            <value>24</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/fcs/control-mode</property>
+            <value>29</value>
+          </equals>
+	</or>
+      </condition>     
+    </item>
+
+</PropertyList>

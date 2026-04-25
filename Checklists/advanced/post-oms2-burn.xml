@@ -1,0 +1,371 @@
+<PropertyList>
+
+  <title>Post OMS-2 burn advanced</title>  
+
+  <item>
+    <name>CDR/PLT flight controller power</name>
+    <value>OFF</value>
+    <condition>
+      <and>
+	<equals>
+          <property>/fdm/jsbsim/fcs/controller-power-cdr</property>
+	  <value>0</value>
+	</equals>
+	<equals>
+          <property>/fdm/jsbsim/fcs/controller-power-plt</property>
+	  <value>0</value>
+	</equals>
+      </and>
+    </condition>      
+  </item>
+
+  <item>
+    <name>DAP mode</name>
+    <value>AUTO</value>
+       <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/ap/orbital-dap-auto</property>
+          <value>1</value>
+        </equals>
+       </condition>    
+  </item>
+
+  <item>
+    <name>OMS TVC gimbal checks (secondary and primary)</name>
+    <value>ITEM +34 EXEC</value>
+  </item>
+
+  
+  <item>
+    <name>OMS/RCS post burn reconfiguration</name>
+  </item>
+
+  <!-- GPC/OPEN because we have 2 ways switch instead of 3 -->
+  
+  <item>
+    <name>Aft L/R RCS He pressure valves A</name>
+    <value>GPC/OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/helium-left-rcs-valve-A-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/helium-right-rcs-valve-A-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>Aft L/R RCS He pressure valves B</name>
+    <value>CLOSE</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/helium-left-rcs-valve-B-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/helium-right-rcs-valve-B-status</property>
+          <value>0</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>Aft L/R RCS tank isolation valves (six)</name>
+    <value>OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-left-rcs-valve-12-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-left-rcs-valve-345A-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-left-rcs-valve-345B-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-right-rcs-valve-12-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-right-rcs-valve-345A-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-right-rcs-valve-345B-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>Aft L/R RCS manifold isolation valves</name>
+    <value>GPC/OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-left-rcs-valve-1-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-left-rcs-valve-2-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-left-rcs-valve-3-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-left-rcs-valve-4-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-left-rcs-valve-5-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-right-rcs-valve-1-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-right-rcs-valve-2-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-right-rcs-valve-3-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-right-rcs-valve-4-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-right-rcs-valve-5-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+  
+
+  <item>
+    <name>Aft L/R RCS crossfeed valves</name>
+    <value>CLOSE</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/crossfeed-left-rcs-valve-12-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/crossfeed-left-rcs-valve-345-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/crossfeed-right-rcs-valve-12-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/crossfeed-right-rcs-valve-345-status</property>
+          <value>0</value>
+        </equals>        
+      </and>
+    </condition>
+  </item>
+
+
+  <item>
+    <name>Fwd RCS He pressure valve A</name>
+    <value>GPC/OPEN</value>
+    <condition>
+      <equals>
+        <property>/fdm/jsbsim/systems/rcs-hardware/helium-fwd-rcs-valve-A-status</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </item>
+
+  <item>
+    <name>Fwd RCS He pressure valve B</name>
+    <value>CLOSE</value>
+    <condition>
+      <equals>
+        <property>/fdm/jsbsim/systems/rcs-hardware/helium-fwd-rcs-valve-B-status</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </item>
+
+
+  
+  <item>
+    <name>Fwd RCS tank isolation valves</name>
+    <value>OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-fwd-rcs-valve-12-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/tank-fwd-rcs-valve-345-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+
+  <item>
+    <name>Fwd RCS manifold isolation valves</name>
+    <value>GPC/OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-fwd-rcs-valve-1-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-fwd-rcs-valve-2-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-fwd-rcs-valve-3-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-fwd-rcs-valve-4-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/mfold-fwd-rcs-valve-5-status</property>
+          <value>1</value>
+        </equals>        
+      </and>
+    </condition>
+  </item>
+  
+  
+  <item>
+    <name>L/R OMS He pressure and isolation valves A</name>
+    <value>CLOSE</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-A-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-A-status</property>
+          <value>0</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>L/R OMS He pressure and isolation valves B</name>
+    <value>CLOSE</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-B-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-B-status</property>
+          <value>0</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+
+  <item>
+    <name>L/R OMS tank isolation valves A</name>
+    <value>OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-A-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-A-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>L/R OMS tank isolation valves B</name>
+    <value>OPEN</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-B-status</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-B-status</property>
+          <value>1</value>
+        </equals>
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>L/R OMS crossfeed valves</name>
+    <value>CLOSE</value>
+    <condition>
+      <and>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-A-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-B-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-A-status</property>
+          <value>0</value>
+        </equals>
+        <equals>
+          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-B-status</property>
+          <value>0</value>
+        </equals>       
+      </and>
+    </condition>
+  </item>
+
+  <item>
+    <name>Major mode change</name>        
+  </item>
+
+  <item>
+    <name>GNC major mode</name>
+    <value>OPS 106 PRO</value>
+    <condition>
+      <equals>
+        <property>/fdm/jsbsim/systems/dps/major-mode</property>
+        <value>106</value>
+      </equals>
+    </condition>
+  </item>
+
+
+  
+</PropertyList>

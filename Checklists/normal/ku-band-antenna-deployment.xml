@@ -1,0 +1,185 @@
+<PropertyList>
+  
+    <title>Ku-band antenna deployment</title>  
+
+    <item>
+      <name>Deployment</name>
+    </item>
+
+    <item>
+      <name>verify payload bay door</name>
+      <value>OPEN</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/pb-door-indicator</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify antenna heater circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-heater-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>set electrical power circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-elec-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>set signal processor power circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-sig-proc-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>set deployment switch to</name>
+      <value>DEPLOY</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-deploy-switch</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify antenna</name>
+      <value>DEPLOYED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-pos</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Stowage</name>
+    </item>
+
+    <item>
+      <name>set deployment switch to</name>
+      <value>STOW</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-deploy-switch</property>
+	  <value>0</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify antenna</name>
+      <value>STOWED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-pos</property>
+	  <value>0</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>if fails, set direct stow to</name>
+      <value>ON</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/ku-antenna-direct-stow-switch</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/ku-antenna-deploy-switch</property>
+	    <value>0</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify antenna</name>
+      <value>STOWED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-pos</property>
+	  <value>0</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Jettison</name>
+    </item>
+
+    <item>
+      <name>set pyrotechnics SYS A and SYS B circuit breakers</name>
+      <value>CLOSED</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/ku-antenna-jett-A-cb</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/ku-antenna-jett-B-cb</property>
+	    <value>1</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set Ku antenna jettison arm switch to</name>
+      <value>ARM</value>
+      <condition>
+	
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-arm-switch</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>set Ku antenna jettison switch to</name>
+      <value>JETT</value>
+      <condition>
+	
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-jett-switch</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+    
+    <item>
+      <name>verify antenna</name>
+      <value>JETTISONED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-attached</property>
+	  <value>0</value>
+	</equals>
+      </condition>
+    </item>
+
+</PropertyList>

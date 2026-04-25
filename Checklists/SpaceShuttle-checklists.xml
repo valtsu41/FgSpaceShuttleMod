@@ -1,0 +1,34 @@
+<PropertyList>
+
+  <group>
+    <name>Normal</name>
+    <checklist include="normal/pre-launch.xml"/>
+    <checklist include="normal/post-meco.xml"/>
+    <checklist include="normal/post-oms1-burn.xml"/>
+    <checklist include="normal/post-orbital-insertion.xml"/>
+    <checklist include="normal/ku-band-antenna-deployment.xml"/>
+    <checklist include="normal/rms-arm-operations.xml"/>
+    <checklist include="normal/de-orbit-preparations.xml"/>
+    <checklist include="normal/pre-de-orbit-burn.xml"/>
+    <checklist include="normal/pre-entry.xml"/>
+    <checklist include="normal/oms-rcs-crossfeeding.xml"/>
+  </group>
+    
+  <group>
+    <name>Advanced</name>
+    <checklist include="advanced/pre-launch.xml"/>
+    <checklist include="advanced/ascent.xml"/>
+    <checklist include="advanced/post-meco.xml"/>
+    <checklist include="advanced/pre-oms2-burn.xml"/>
+    <checklist include="advanced/post-oms2-burn.xml"/>
+    <checklist include="advanced/post-insertion-gpc.xml"/>
+    <checklist include="advanced/post-insertion-plbd.xml"/>
+    <checklist include="advanced/de-orbit-preparations-plbd.xml"/>
+    <checklist include="advanced/de-orbit-preparations-gpc.xml"/>
+    <checklist include="advanced/pre-de-orbit-burn.xml"/>
+    <checklist include="advanced/post-de-orbit-burn.xml"/>
+    <checklist include="advanced/entry.xml"/>
+  </group>
+
+  
+</PropertyList>

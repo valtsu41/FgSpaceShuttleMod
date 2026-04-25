@@ -1,0 +1,567 @@
+<PropertyList>
+
+  <title>Post insertion GPC config</title>
+
+  <page>
+    <item>
+      <name>GNC GPC reconfiguration</name>
+    </item>
+    
+    <item>
+      <name>select G2FD to freeze dry</name>
+      <value>GPC 3</value>
+    </item>
+
+    <item>
+      <name>access GPC memory (GNC 0)</name>
+      <value>SPEC 0 PRO</value>
+    </item>
+
+    <item>
+      <name>load MC 1 memory configuration</name>
+      <value>ITEM 1+1 EXEC </value>
+    </item>
+
+    <item>
+      <name>reassign G2FD strings to another GPC</name>
+      <value>ITEM 9+2 EXEC </value>
+      <value>ITEM 14+2 EXEC </value>
+      <value>ITEM 15+0 EXEC </value>
+    </item>
+
+    <item>
+      <name>BFS CRT display</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/bfs/display-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>mode recall to reload</name>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode</property>
+          <value>106</value>
+        </equals>
+      </condition>
+      <value>OPS 106 PRO</value>
+    </item>
+
+    <item>
+      <name>check NBAT</name>
+      <value>SPEC 6 PRO</value>
+    </item>
+    
+    <item>
+      <name>mode G2FD to</name>  
+      <value>STANDBY</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc3-mode-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>halt G2FD</name>    
+      <value>HALT</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc3-mode-switch</property>
+          <value>-1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>restart G2FD</name>
+      <value>RUN</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc3-mode-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Loading OPS 2 program (MC 2)</name>
+    </item>
+
+    <item>
+      <name>set-up a display for G2FD</name>
+      <value>GPC/CRT 31 EXEC</value>
+    </item>
+
+    <item>
+      <name>load MC 2 into G2FD</name>
+      <value>ITEM 45+2 EXEC</value>
+      <value>ITEM 46+3 EXEC</value>
+      <value>ITEM 47 EXEC</value>
+    </item>
+
+    <item>
+      <name>restore CRT display</name>
+      <value>GPC/CRT 11 EXEC</value>
+    </item>
+    
+    <item>
+      <name>freeze dry G2FD</name>    
+      <value>HALT</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc3-mode-switch</property>
+          <value>-1</value>
+        </equals>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>Transition to GNC OPS 2</name>        
+    </item>
+
+    <item>
+      <name>access GPC memory (GNC 0)</name>
+      <value>SPEC 0 PRO</value>
+    </item>
+
+    <item>
+      <name>load MC 2 memory configuration</name>
+      <value>ITEM 1+2 EXEC </value>
+    </item>
+
+    <item>
+      <name>modify MC 2 bus assignement table</name>
+      <value>ITEM 9+1 EXEC </value>
+      <value>ITEM 10+2 EXEC </value>
+      <value>ITEM 14+0 EXEC </value>
+    </item>
+    
+    <item>
+      <name>GNC major mode</name>
+      <value>OPS 201 PRO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode</property>
+          <value>201</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify loading of UNIV PTG software</name>
+      <value>CHECKED</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode</property>
+          <value>201</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Payload bus activation</name>
+    </item>
+
+    <item>
+      <name>payload cabin</name>
+      <value>MN A</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dummy/switch/pl-cabin</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>primary MN C bus</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dummy/R1-panel-dummy/pl-pri-mn-c</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+    
+    <item>
+      <name>AUX bus</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dummy/switch/pl-aux</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>aft MN B bus</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dummy/switch/pl-aft-mn-b</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+  </page>
+  <page>
+    
+    <item>
+      <name>Aft station configuration</name>
+    </item>
+
+    <item>
+      <name>FWD RCS heaters</name>
+      <value>A AUTO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-status</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>left pod RCS/OMC heaters</name>
+      <value>A AUTO / B OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-left-A-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-left-B-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>right pod RCS/OMC heaters</name>
+      <value>A AUTO / B OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-right-A-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-right-B-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>OMS crossfeed lines</name>
+      <value>A AUTO / B OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-crossfeed-A-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/heater-crossfeed-B-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>FWD RCS jet heaters</name>
+      <value>AUTO</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-1-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-2-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-3-status</property>
+            <value>1</value>
+          </equals>        
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-4-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-5-status</property>
+            <value>1</value>
+          </equals>        
+        </and>
+      </condition>
+    </item>
+    
+    <item>
+      <name>AFT RCS jet heaters</name>
+      <value>AUTO</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-1-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-2-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-3-status</property>
+            <value>1</value>
+          </equals>        
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-4-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-5-status</property>
+            <value>1</value>
+          </equals>        
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>APU lube oil line heaters</name>
+      <value>A</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/lube-line-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/lube-line-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/lube-line-heater-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>hydraulic circulation pump 2 power</name>
+      <value>MN C</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-circ-pump-pwr-sel</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>IDP/CRT 4 power</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-power-status[3]</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/display/R11-pwr-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>SM GPC configuration</name>
+    </item>
+
+    <item>
+      <name>set-up a display for GPC 4</name>
+      <value>GPC/CRT 41 EXEC</value>
+    </item>
+
+    <item>
+      <name>load MC 4 memory configuration</name>
+      <value>ITEM 1+4 EXEC </value>
+    </item>
+    
+    <item>
+      <name>modify MC 4 bus assignement table</name>
+      <value>ITEM 14+0 EXEC </value>
+    </item>
+
+    <item>
+      <name>Transition to SM OPS 2</name>        
+    </item>
+
+    <item>
+      <name>verify CRT 1 major function mode</name>
+      <value>SM</value>
+      <condition>
+        <or>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-function-switch</property>
+            <value>2</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-function-switch[1]</property>
+            <value>2</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-function-switch[2]</property>
+            <value>2</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-function-switch[3]</property>
+            <value>2</value>
+          </equals>
+        </or>
+      </condition>      
+    </item>
+
+    <item>
+      <name>SM major mode</name>
+      <value>OPS 201 PRO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode-sm</property>
+          <value>201</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Securing BFS</name>
+    </item>
+
+    <item>
+      <name>display BFS on a CRT</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/bfs/display-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>      
+    </item>
+
+    <item>
+      <name>load BFS GNC system software</name>
+      <value>OPS 0 PRO</value>
+    </item>
+
+    <!-- added this extra one to stop the flashing -->
+    <item>
+      <name>I/O RESET for BFC push button</name>
+      <value>NO FLASH</value>
+    </item>
+    
+    <item>
+      <name>switch off BFS CRT display</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/bfs/display-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>      
+    </item>
+
+    <item>
+      <name>verify no IDP assigned to BFS</name>
+      <value>CHECKED</value>
+    </item>
+    
+
+    <item>
+      <name>MEDs reconfiguration</name>
+    </item>
+
+    <item>
+      <name>no output on CRT 3</name>
+      <value>GPC/CRT 03 EXEC</value>
+    </item>
+
+    <item>
+      <name>IDP/CRT 3 power</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/dps/idp-power-status[2]</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/display/C3-pwr-switch</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify SM is running on CRT 4</name>
+      <value>CHECKED</value>
+    </item>
+
+    <item>
+      <name>switch off GPC 5</name>    
+      <value>HALT</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc5-mode-switch</property>
+          <value>-1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>GPC 5 output</name>    
+      <value>NORM</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc5-bus-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+    
+
+    <item>
+      <name>GPC 4 output</name>    
+      <value>TERMINATE</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/gpc4-bus-switch</property>
+          <value>-1</value>
+        </equals>
+      </condition>
+    </item>
+
+  </page>
+  
+</PropertyList>
+

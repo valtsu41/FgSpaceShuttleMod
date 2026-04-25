@@ -1,0 +1,816 @@
+<PropertyList>
+
+  <title>Post insertion PLBD operations</title>
+
+  <page>
+    
+    <item>
+      <name>Configuration for PLBD opening</name>
+    </item>
+
+    <item>
+      <name>PL BAY FLOOD lights AFT</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-port-aft-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-star-aft-switch</property>
+            <value>1</value>
+          </equals>        
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>PL BAY FLOOD lights MID</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-port-mid-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-star-mid-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>PL BAY FLOOD lights FWD</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-port-fwd-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/pb-flood-star-fwd-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>PL BAY FLOOD lights BHD</name>
+      <value>ON</value>
+      <condition>
+        <equals>        
+          <property>/fdm/jsbsim/systems/light/pb-flood-port-fwd-bhd-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+    
+    
+    <item>
+      <name>Maneuver to PLBD opening attitude</name>
+    </item>
+
+    <item>
+      <name>load GNC UNIV PTG software</name>
+      <value>OPS 201 PRO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode</property>
+          <value>201</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>TGT ID Earth</name>
+      <value>ITEM 8+2 EXEC</value>
+    </item>
+
+    <item>
+      <name>BDY VECT -Z</name>
+      <value>ITEM 14+3 EXEC</value>
+    </item>
+
+    <item>
+      <name>check Pitch value</name>
+      <value>90</value>
+    </item>
+    
+    <item>
+      <name>check Yaw value</name>
+      <value>0.0</value>
+    </item>
+
+    <item>
+      <name>check Omicron value</name>
+      <value>0.0</value>
+    </item>
+
+    <item>
+      <name>DAP mode</name>
+      <value>AUTO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/ap/orbital-dap-auto</property>
+          <value>1</value>
+        </equals>
+      </condition>    
+    </item>
+    
+    <item>
+      <name>initiate tracking</name>
+      <value>ITEM 19 EXEC</value>
+    </item>
+
+    <item>
+      <name>Radiators activation</name>
+    </item>
+
+    <item>
+      <name>flash evaporator controller PRI A</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/atcs/fes-controller-A-status</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>flash evaporator controller PRI B</name>
+      <value>ON</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/atcs/fes-controller-B-status</property>
+          <value>-1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <!-- AUTO switch inactive, we do it manually -->
+    <item>
+      <name>set radiator bypass valves to</name>
+      <value>AUTO/RAD</value>
+      <condition>
+        <and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
+	    <value>0</value>
+	  </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set radiator controllers loop to</name>
+      <value>AUTO A</value>
+      <condition>
+        <and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/rad-controller-1-status</property>
+	    <value>1</value>
+	  </equals>
+          <equals>
+	    <property>/fdm/jsbsim/systems/atcs/rad-controller-2-status</property>
+	    <value>1</value>
+	  </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>check bypass valves display (90s)</name>
+      <value>RAD</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>Open payload bay doors</name>
+    </item>
+
+    <item>
+      <name>load SM PL BAY DOORS software</name>
+      <value>OPS 202 PRO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode-sm</property>
+          <value>202</value>
+        </equals>
+      </condition>
+    </item>
+    
+    <item>
+      <name>verify PL BAY DR switch</name>
+      <value>STOP</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-auto-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>    
+    </item>
+    
+    <item>
+      <name>verify on CRT 4: PBD SW</name>
+      <value>STOP</value>
+    </item>
+
+    <item>
+      <name>verify on CRT 4: MAN SEL</name>
+      <value>NO</value>
+    </item>
+
+    <item>
+      <name>verify on CRT 4: PBD SW BYPASS</name>
+      <value>NO</value>
+    </item>
+
+    <item>
+      <name>AC POWER ON</name>
+      <value>ITEM 1 EXEC</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-software-acpower-enable</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>activate AUTO MODE SEL</name>
+      <value>ITEM 3 EXEC</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-mode-auto</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>PL BAY SYS switches (two)</name>
+      <value>ENABLE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-sys1-enable</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-sys2-enable</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify latches status on CRT 4 (ten)</name>
+      <value>CL</value>
+    </item>
+
+    <item>
+      <name>activate PL BAY DR switch</name>
+      <value>OPEN</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-auto-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>    
+    </item>
+
+    <item>
+      <name>verify latches and doors status on CRT 4</name>
+      <value>OP</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-right-pos</property>
+            <value>1.0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-left-pos</property>
+            <value>1.0</value>
+          </equals>
+        </and>
+      </condition>        
+    </item>
+    
+    <item>
+      <name>PL BAY DR switch</name>
+      <value>STOP</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-auto-switch</property>
+          <value>0</value>
+        </equals>
+      </condition>    
+    </item>
+
+    <item>
+      <name>PL BAY SYS switches</name>
+      <value>DISABLE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-sys1-enable</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/pb-door-sys2-enable</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>AC POWER OFF</name>
+      <value>ITEM 2 EXEC</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/mechanical/pb-door-software-acpower-enable</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>load SM ANTENNA software</name>
+      <value>OPS 201 PRO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/dps/major-mode-sm</property>
+          <value>201</value>
+        </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>floodlights (after minimum 10 min)</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/payload-bay-aft</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/light/payload-bay-mid</property>
+            <value>0</value>
+          </equals>
+          <equals>        
+            <property>/fdm/jsbsim/systems/light/payload-bay-fwd</property>
+            <value>0</value>
+          </equals>
+          <equals>        
+            <property>/fdm/jsbsim/systems/light/pb-flood-port-fwd-bhd-switch</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+  </page>
+
+  <page>
+    
+    <item>
+      <name>Ku-band antenna deployment and activation</name>
+    </item>
+
+    <item>
+      <name>UHF mode selection</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/antenna/uhf-sel-switch</property>
+          <value>1</value>
+        </equals>
+      </condition>
+    </item>
+       
+    <item>
+      <name>antenna heater circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-heater-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>cable heater circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+          <property>/fdm/jsbsim/systems/mechanical/ku-antenna-cable-heater-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>electrical power circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-elec-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>signal processor power circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-sig-proc-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>deployment switch</name>
+      <value>DEPLOY</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-deploy-switch</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify antenna</name>
+      <value>DEPLOYED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-pos</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Post PLBD radiators configuration</name>
+    </item>
+
+    <item>
+      <name>display SM APU/ENVIRON THERM (CRT 1)</name>
+      <value>SPEC 88 PRO</value>
+    </item>
+
+    <item>
+      <name>ammonia controllers A and B</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/nh3-controller-A-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/atcs/nh3-controller-B-switch</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify radiator bypass valves</name>
+      <value>RAD</value>
+      <condition>
+        <and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
+	    <value>0</value>
+	  </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <!-- switch no active for that one -->
+    <item>
+      <name>H2O LOOP 2 BYP MODE</name>
+      <value>AUTO</value>
+    </item>
+    
+    <item>
+      <name>monitor RAD OUT and EVAP OUT temperature</name>
+      <value>SPEC 88 PRO</value>
+    </item>
+
+    <item>
+      <name>HI LOAD EVAP (when RAD OUT T smaller than 60 deg)</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/atcs/fes-hi-load-status</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+
+    <!-- this guy is not in the post plbd ops, probably it comes later,
+         but otherwise we're going to freeze the Shuttle -->
+    
+    <item>
+      <name>flash evaporator controller PRI B</name>
+      <value>OFF</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/atcs/fes-controller-B-status</property>
+          <value>0</value>
+        </equals>
+      </condition>
+    </item>
+    
+    <item>
+      <name>display GNC UNIV PTG (CRT 1)</name>
+      <value>RESTORED</value>
+    </item>
+
+    <item>
+      <name>Star tracker activation</name>
+    </item>
+
+    <item>
+      <name>star tracker -Y and -Z power</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-y-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>             
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-z-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>GNC keyboard</name>
+      <value>I/O RESET</value>
+    </item>
+
+    <item>
+      <name>star tracker door control switches</name>
+      <value>OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys1-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>             
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys2-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify Y door status (8-24 sec)</name>
+      <value>OP</value>
+      <condition>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-door-y-pos</property>
+            <value>1</value>
+          </equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify Z door status (8-24 sec)</name>
+      <value>OP</value>
+      <condition>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-door-z-pos</property>
+            <value>1</value>
+          </equals>
+      </condition>
+    </item>
+
+     <item>
+      <name>star tracker door control switches</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys1-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>             
+            <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys2-switch</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>load GNC S TRK/COAS CNTL program</name>
+      <value>SPEC 22 PRO</value>
+    </item>
+
+    <item>
+      <name>activate star tracking</name>
+      <value>ITEM 3 EXEC</value>
+      <value>ITEM 4 EXEC</value>
+    </item>
+
+    <item>
+      <name>verify IMU alignement</name>
+      <value>SPEC 21 PRO</value>
+    </item>
+
+    <item>
+      <name>Water boiler vent heaters activation</name>
+    </item>
+
+    <item>
+      <name>verify BLR CNTR/HTR</name>
+      <value>A</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-heater-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    
+    <item>
+      <name>water spray boiler controller power</name>
+      <value>ON</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-power-status</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+    <item>
+      <name>orbital DAP on vernier</name>
+      <value>VERN</value>
+    </item>
+
+    <item>
+      <name>DAP mode</name>
+      <value>AUTO</value>
+      <condition>
+        <equals>
+          <property>/fdm/jsbsim/systems/ap/orbital-dap-auto</property>
+          <value>1</value>
+        </equals>
+      </condition>    
+    </item>
+
+    
+    <item>
+      <name>hydraulic circulation pumps</name>
+      <value>GPC</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[1]/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/apu/apu[2]/hyd-circ-pump-cmd</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition> 
+    </item>
+
+
+    <item>
+      <name>Area Navigation</name>
+    </item>
+
+    <item>
+      <name>TACAN receivers</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys1-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys2-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys3-switch</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>MLS receivers</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys1-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys2-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys3-switch</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>Radar altimeters</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/radar-altimeter-1-power</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/radar-altimeter-2-power</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+    
+  </page>
+  
+</PropertyList>
+

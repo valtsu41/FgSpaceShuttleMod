@@ -1,0 +1,422 @@
+<PropertyList>
+
+    <title>Post orbital insertion</title>  
+
+    <item>
+      <name>MPS saving and RCS preparation</name>
+    </item>
+
+    <item>
+      <name>set RCS and OMS heaters to</name>
+      <value>AUTO</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-1-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-2-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-3-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-4-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-5-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-1-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-2-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-3-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-4-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/rcs-hardware/heater-pod-5-status</property>
+	    <value>1</value>
+	  </equals>
+	  <or>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-A-status</property>
+	      <value>1</value>
+	    </equals>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/rcs-hardware/heater-fwd-B-status</property>
+	      <value>1</value>
+	    </equals>
+	  </or>
+	  <or>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/oms-hardware/heater-left-A-status</property>
+	      <value>1</value>
+	    </equals>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/oms-hardware/heater-left-B-status</property>
+	      <value>1</value>
+	    </equals>
+	  </or>
+	  <or>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/oms-hardware/heater-right-A-status</property>
+	      <value>1</value>
+	    </equals>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/oms-hardware/heater-right-B-status</property>
+	      <value>1</value>
+	    </equals>
+	  </or>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set Ku-band antenna heater circuit breaker</name>
+      <value>CLOSED</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-heater-cb</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>set MPS/TVC isolation valves</name>
+      <value>CLOSED</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu/tvc-isolation-valve-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu[1]/tvc-isolation-valve-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu[2]/tvc-isolation-valve-status</property>
+	    <value>0</value>
+	  </equals>	
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>Radiator deployment</name>
+    </item>
+
+    <item>
+      <name>set radiator valves from bypass to</name>
+      <value>AUTO</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-1-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/flow-bypass-2-status</property>
+	    <value>0</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set radiator controllers to</name>
+      <value>ON</value>
+      <condition>
+	<and>
+	  <or>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/atcs/rad-controller-1-status</property>
+	      <value>1</value>
+	    </equals>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/atcs/rad-controller-1-status</property>
+	      <value>-1</value>
+	    </equals>
+	  </or>
+	  <or>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/atcs/rad-controller-2-status</property>
+	      <value>1</value>
+	    </equals>
+	    <equals>
+	      <property>/fdm/jsbsim/systems/atcs/rad-controller-2-status</property>
+	      <value>-1</value>
+	    </equals>
+	  </or>
+	</and>
+      </condition>
+    </item>
+
+
+
+    <item>
+      <name>Open Payload Bay doors</name>
+    </item>
+
+    <item>
+      <name>payload bay floodlights</name>
+      <value>ON</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/light/pb-flood-star-aft-switch</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/light/pb-flood-star-mid-switch</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/light/pb-flood-star-fwd-switch</property>
+	    <value>1</value>
+	  </equals>
+ 	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>power to electromechanical actuators</name>
+      <value>ON</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/pb-door-power</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>door auto opening switch</name>
+      <value>OPEN</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/pb-door-auto-switch</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify payload bay doors</name>
+      <value>OPEN</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/pb-door-indicator</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>Prepare orbital operations</name>
+    </item>
+
+    <item>
+      <name>Ku-band antenna</name>
+      <value>DEPLOY</value>
+      <condition>
+	<equals>
+	  <property>/fdm/jsbsim/systems/mechanical/ku-antenna-pos</property>
+	  <value>1</value>
+	</equals>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify freon cooling loop operations</name>
+      <value>NOMINAL</value>
+      <condition>
+	<greater-than>
+	  <property>/fdm/jsbsim/systems/atcs/rad-heat-dump-capacity</property>
+	  <value>0.0</value>
+	</greater-than>
+      </condition>
+    </item>
+
+    <item>
+      <name>set flash evaporator controllers to</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/fes-controller-A-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/fes-controller-B-status</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/atcs/fes-controller-sec-status</property>
+	    <value>0</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set APU steam vent heaters</name>
+      <value>ACTIVE</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu/boiler-heater-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu[1]/boiler-heater-status</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/apu/apu[2]/boiler-heater-status</property>
+	    <value>1</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>Open star tracker doors</name>
+    </item>
+
+    <item>
+      <name>star tracker -Y and -Z power</name>
+      <value>ON</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-y-switch</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-z-switch</property>
+	    <value>1</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>star tracker door control switch</name>
+      <value>OPEN</value>
+      <condition>
+	<or>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys1-switch</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-sys2-switch</property>
+	    <value>1</value>
+	  </equals>
+	</or>
+      </condition>
+    </item>
+
+    <item>
+      <name>verify star tracker doors</name>
+      <value>OPEN</value>
+      <condition>
+	<and>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-door-z-pos</property>
+	    <value>1</value>
+	  </equals>
+	  <equals>
+	    <property>/fdm/jsbsim/systems/mechanical/star-tracker-door-z-pos</property>
+	    <value>1</value>
+	  </equals>
+	</and>
+      </condition>
+    </item>
+
+    <item>
+      <name>set star tracker</name>
+      <value>ACTIVE</value>
+    </item>
+
+
+    <item>
+      <name>Area Navigation</name>
+    </item>
+
+    <item>
+      <name>TACAN receivers</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys1-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys2-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/tacan-sys3-switch</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>MLS receivers</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys1-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys2-switch</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/mls-sys3-switch</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>Radar altimeters</name>
+      <value>OFF</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/radar-altimeter-1-power</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/navigation/radar-altimeter-2-power</property>
+            <value>0</value>
+          </equals>
+	</and>
+      </condition>     
+    </item>
+
+</PropertyList>

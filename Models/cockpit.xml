@@ -15910,7 +15910,7 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>oms-eng-left</tooltip-id>
-                <label>LefOMS Engine Arm: %s</label>
+                <label>Left OMS Engine Arm: %s</label>
                 <property>/fdm/jsbsim/systems/oms-hardware/engine-left-arm-cmd</property>
                 <mapping>nasal</mapping>
                 <script>
