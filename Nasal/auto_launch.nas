@@ -465,12 +465,30 @@ else if (auto_launch_stage == 4)
 
 
 
-	# MECO if apoapsis target is met or all three cutoff buttons have been depressed
-
-	var manual_meco = SpaceShuttle.ssme_array[0].run_cmd + SpaceShuttle.ssme_array[1].run_cmd + SpaceShuttle.ssme_array[2].run_cmd;
+	# MECO if apoapsis target is met
 
 	#MECO when TGO is less than half guidance cycle or Ap target constraint met (Vi = Vd norm)
-	if ((((SpaceShuttle.PEG.tgo_total <= 0.5) or (vi > SpaceShuttle.PEG.vd_norm)) and (SpaceShuttle.PEG.advanced_peg_flag == 1)) or ((getprop("/fdm/jsbsim/systems/orbital/apoapsis-km") >= getprop("/fdm/jsbsim/systems/ap/launch/apoapsis-target")) and (SpaceShuttle.PEG.advanced_peg_flag == 0)) or (manual_meco == 0) or (getprop("/consumables/fuel/tank/level-norm") < 0.005))
+	if (
+		(
+			(
+				(
+					SpaceShuttle.PEG.tgo_total <= 0.5
+				) or (
+					vi > SpaceShuttle.PEG.vd_norm
+				)
+			) and (
+				SpaceShuttle.PEG.advanced_peg_flag == 1
+			)
+		) or (
+			(
+				getprop("/fdm/jsbsim/systems/orbital/apoapsis-km") >= getprop("/fdm/jsbsim/systems/ap/launch/apoapsis-target")
+			) and (
+				SpaceShuttle.PEG.advanced_peg_flag == 0
+			)
+		) or (
+			getprop("/consumables/fuel/tank/level-norm") < 0.005
+		)
+	)
 		{
 		
 		#Meco flag for PEG
@@ -833,11 +851,9 @@ else if (auto_launch_stage == 4)
 	# MECO if apoapsis target is met
 	#Lower dist ballistic for a lower Vi at cutoff ( more in the middle of TAL range 24.3 ish, compared to before at the limit of High energy one at Vi = 25 kftish)
 
-	var manual_meco = SpaceShuttle.ssme_array[0].run_cmd + SpaceShuttle.ssme_array[1].run_cmd + SpaceShuttle.ssme_array[2].run_cmd;
-
 	#if ((dist_ballistic >  (dist - 2500000.0 + dist_corr_low_v)) or (manual_meco == 0) or (vi > SpaceShuttle.PEG.vd_norm) or (getprop("/consumables/fuel/tank/level-norm") < 0.005))
 	#if ((dist * M2NM < 3000) or (manual_meco == 0) or (vi > SpaceShuttle.PEG.vd_norm) or (getprop("/consumables/fuel/tank/level-norm") < 0.005))
-	if ((manual_meco == 0) or (vi > SpaceShuttle.PEG.vd_norm) or (getprop("/consumables/fuel/tank/level-norm") < 0.005))
+	if ((vi > SpaceShuttle.PEG.vd_norm) or (getprop("/consumables/fuel/tank/level-norm") < 0.005))
 		{
 		
 		#PEG exited
