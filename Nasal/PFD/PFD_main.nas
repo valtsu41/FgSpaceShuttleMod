@@ -1232,19 +1232,13 @@ var is_pfd = func(mdu) {
 
 # update displays
 var frame_device_update_id = 0;
-var pfd_count = 0;
-var acc_pfd_count = 0;
 var rtExec_loop = func {
 	if (frame_device_update_id >= size(MDU_array)) {
         	frame_device_update_id = 0;
-		pfd_count = acc_pfd_count;
-		acc_pfd_count = 0;
 	}
 
-	# Don't update pdf's, but count them. They have their own special loop
-	if (is_pfd(MDU_array[frame_device_update_id])) {
-		acc_pfd_count = acc_pfd_count + 1;
-	} else {
+	# Don't update pfd's. They have their own special loop
+	if (!is_pfd(MDU_array[frame_device_update_id])) {
 		MDU_array[frame_device_update_id].update();
 	}
 
@@ -1255,16 +1249,24 @@ var rtExec_loop = func {
 
 var pfd_i = 0;
 var pfdmod_loop = func()  {
-	if (pfd_i >= size(MDU_array))
-			pfd_i = 0;
+	# Count pfd's
+	var pfd_count = 0;
+	foreach (mdu; MDU_array) {
+		if (is_pfd(mdu))
+			pfd_count = pfd_count + 1;
+	}
+
 	if (pfd_count > 0) {
 		# Skip forward until we find a PFD
-		while(!is_pfd(MDU_array[pfd_i])) {
+		while (!is_pfd(MDU_array[pfd_i])) {
 			pfd_i = pfd_i + 1;
-			if (pfd_i >= size(MDU_array)) pfd_i = 0;
+			if (pfd_i >= size(MDU_array)) 
+				pfd_i = 0;
 		}
 		MDU_array[pfd_i].update();
 		pfd_i = pfd_i + 1;
+		if (pfd_i >= size(MDU_array))
+			pfd_i = 0;
 		#print(str(pfd_count)~"PFDS");
 		settimer(pfdmod_loop, PFD_update_time / pfd_count);
 	} else {
