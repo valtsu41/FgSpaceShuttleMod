@@ -2,484 +2,491 @@
 
   <title>Pre OMS-2 burn advanced</title>  
 
-  <item>
-    <name>trim load OMS both</name>
-    <value>ITEM 6+0.4-5.7+5.7 EXEC</value>
-  </item>
+  <page>
+    
+    <item>
+      <name>trim load OMS both</name>
+      <value>ITEM 6+0.4-5.7+5.7 EXEC</value>
+    </item>
 
-  <item>
-    <name>trim load OMS single</name>
-    <value>ITEM 6+0.4+5.2-5.2 EXEC</value>
-  </item>
+    <item>
+      <name>trim load OMS single</name>
+      <value>ITEM 6+0.4+5.2-5.2 EXEC</value>
+    </item>
 
-  <item>
-    <name>OMS-2 burn</name>
-    <value>Check cue cards</value>
-  </item>
+    <item>
+      <name>OMS-2 burn</name>
+      <value>Check cue cards</value>
+    </item>
 
-  
-  <item>
-    <name>Shut down main propulsion system</name>
-  </item>
+    
+    <item>
+      <name>Shut down main propulsion system</name>
+    </item>
 
-  <!-- we don't have the buttons coded 3 ways, it should be GPC to CLOSE them:
-       label GPC/CLOSE -->
-  
-  <item>
-    <name>MPS He isolation valves</name>
-    <value>GPC/CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine/helium-isolation-valve-A-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[1]/helium-isolation-valve-A-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[2]/helium-isolation-valve-A-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine/helium-isolation-valve-B-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[1]/helium-isolation-valve-B-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[2]/helium-isolation-valve-B-status</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
+    <!-- we don't have the buttons coded 3 ways, it should be GPC to CLOSE them:
+         label GPC/CLOSE -->
+    
+    <item>
+      <name>MPS He isolation valves</name>
+      <value>GPC/CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/helium-isolation-valve-A-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/helium-isolation-valve-A-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/helium-isolation-valve-A-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/helium-isolation-valve-B-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/helium-isolation-valve-B-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/helium-isolation-valve-B-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
 
-  <!-- same here: GPC/CLOSE for GPC closed for our 2 ways switches -->
-  
-  <item>
-    <name>MPS Pneumatics He isolation valves</name>
-    <value>GPC/CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/helium-isolation-valve-P-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/helium-isolation-valve-Px-status</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>   
-  </item>
+    <!-- same here: GPC/CLOSE for GPC closed for our 2 ways switches -->
+    
+    <item>
+      <name>MPS Pneumatics He isolation valves</name>
+      <value>GPC/CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/helium-isolation-valve-P-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/helium-isolation-valve-Px-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>   
+    </item>
 
-  <item>
-    <name>Helium interconnect valves</name>
-    <value>GPC</value>
-    <condition>
-      <and>
+    <item>
+      <name>Helium interconnect valves</name>
+      <value>GPC</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[0]/helium-interconnect-valve-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/helium-interconnect-valve-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/helium-interconnect-valve-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+    
+    <item>
+      <name>MPS fuel line vacuum inerting</name>
+    </item>
+    
+    <item>
+      <name>for 2 minutes, set LH2 drain/fill valves</name>
+      <value>OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LH2-inboard-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LH2-outboard-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>for 2 minutes, set LO2 drain/fill valves</name>
+      <value>OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LO2-inboard-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LO2-outboard-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>LO2 and LH2 outboard valves</name>
+      <value>CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LO2-outboard-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/propellant/LH2-outboard-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>MPS engine controllers</name>
+    </item>
+    
+    <item>
+      <name>Left engine power</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/controller-A-power</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/controller-B-power</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>Center engine power</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/controller-A-power</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/controller-B-power</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    
+    <item>
+      <name>Right engine power</name>
+      <value>OFF</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/controller-A-power</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/controller-B-power</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+    
+    
+    <item>
+      <name>ET umbilical door closure</name>
+    </item>
+
+    <item>
+      <name>ET umbilical door mode</name>
+      <value>GPC/MAN</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[0]/helium-interconnect-valve-status</property>
+          <property>/fdm/jsbsim/systems/mechanical/et-umbilical-door-mode</property>
           <value>0</value>
         </equals>
+      </condition>
+    </item>
+    
+    <item>
+      <name>centerline latches to</name>
+      <value>STOW</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[1]/helium-interconnect-valve-status</property>
+          <property>/fdm/jsbsim/systems/mechanical/et-door-cl-latch-cmd</property>
           <value>0</value>
         </equals>
+      </condition>     
+    </item>
+
+    <item>
+      <name>verify centerline latches (12 sec)</name>
+      <value>STOWED</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[2]/helium-interconnect-valve-status</property>
+          <property>/fdm/jsbsim/systems/mechanical/et-door-cl-latch-pos</property>
           <value>0</value>
         </equals>
-      </and>
-    </condition>
-  </item>
-  
-  <item>
-    <name>MPS fuel line vacuum inerting</name>
-  </item>
-  
-  <item>
-    <name>for 2 minutes, set LH2 drain/fill valves</name>
-    <value>OPEN</value>
-    <condition>
-      <and>
+      </condition>     
+    </item>
+
+    
+    <item>
+      <name>L/R door positions to</name>
+      <value>CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-left-cmd</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-right-cmd</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>verify door positions (24 sec)</name>
+      <value>CLOSED</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-left-pos</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-right-pos</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+    
+    <item>
+      <name>door latch positions to</name>
+      <value>LATCH</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-left-latch-cmd</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-right-latch-cmd</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+
+    <item>
+      <name>verify door latch positions (6 sec)</name>
+      <value>LATCHED</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-left-latch-pos</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mechanical/et-door-right-latch-pos</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>     
+    </item>
+    
+    <item>
+      <name>ET umbilical door mode</name>
+      <value>GPC</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/propellant/LH2-inboard-status</property>
+          <property>/fdm/jsbsim/systems/mechanical/et-umbilical-door-mode</property>
           <value>1</value>
         </equals>
+      </condition>
+    </item>
+
+  </page>
+
+  <page>
+    
+    <item>
+      <name>OMS burn preparation</name>
+    </item>
+
+    <!-- as before 2 ways button, we label GPC/OPEN instead of GPC -->
+    
+    <item>
+      <name>L/R OMS He pressure and isolation valves A</name>
+      <value>GPC/OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-A-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-A-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>L/R OMS He pressure and isolation valves B</name>
+      <value>CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-B-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-B-status</property>
+            <value>0</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+
+    <item>
+      <name>L/R OMS tank isolation valves A</name>
+      <value>GPC/OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-A-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-A-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>L/R OMS tank isolation valves B</name>
+      <value>GPC/OPEN</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-B-status</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-B-status</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>L/R OMS crossfeed valves</name>
+      <value>CLOSE</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-A-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-B-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-A-status</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-B-status</property>
+            <value>0</value>
+          </equals>       
+        </and>
+      </condition>
+    </item>
+
+    <item>
+      <name>OMS burn cue cards</name>
+      <value>INSTALLED</value>
+    </item>
+
+    <item>
+      <name>OMS burn attitude</name>
+    </item>
+
+    <item>
+      <name>ADI attitude</name>
+      <value>INRTL</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/propellant/LH2-outboard-status</property>
+          <property>/fdm/jsbsim/systems/adi/attitude-select</property>
           <value>1</value>
         </equals>
-      </and>
-    </condition>     
-  </item>
+      </condition>
+    </item>
 
-  <item>
-    <name>for 2 minutes, set LO2 drain/fill valves</name>
-    <value>OPEN</value>
-    <condition>
-      <and>
+    <item>
+      <name>ADI rate</name>
+      <value>HI</value>
+      <condition>
         <equals>
-          <property>/fdm/jsbsim/systems/propellant/LO2-inboard-status</property>
+          <property>/fdm/jsbsim/systems/adi/rate-range-select</property>
           <value>1</value>
         </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/propellant/LO2-outboard-status</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
+      </condition>
+    </item>
 
-  <item>
-    <name>LO2 and LH2 outboard valves</name>
-    <value>CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/propellant/LO2-outboard-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/propellant/LH2-outboard-status</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
+    <item>
+      <name>start maneuver</name>
+      <value>ITEM 27 EXEC</value>
+    </item>
 
-  <item>
-    <name>MPS engine controllers</name>
-  </item>
-  
-  <item>
-    <name>Left engine power</name>
-    <value>OFF</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine/controller-A-power</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine/controller-B-power</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
+    <item>
+      <name>TIG-2:00: OMS engine ARM/PRESS</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/engine-left-arm-cmd</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/oms-hardware/engine-right-arm-cmd</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
 
-  
-  <item>
-    <name>Center engine power</name>
-    <value>OFF</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[2]/controller-A-power</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[2]/controller-B-power</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-
-  
-  <item>
-    <name>Right engine power</name>
-    <value>OFF</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[1]/controller-A-power</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mps/engine[1]/controller-B-power</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-  
-  
-  <item>
-    <name>ET umbilical door closure</name>
-  </item>
-
-  <item>
-    <name>ET umbilical door mode</name>
-    <value>GPC/MAN</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/mechanical/et-umbilical-door-mode</property>
-        <value>0</value>
-      </equals>
-    </condition>
-  </item>
-  
-  <item>
-    <name>centerline latches to</name>
-    <value>STOW</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/mechanical/et-door-cl-latch-cmd</property>
-        <value>0</value>
-      </equals>
-    </condition>     
-  </item>
-
-  <item>
-    <name>verify centerline latches (12 sec)</name>
-    <value>STOWED</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/mechanical/et-door-cl-latch-pos</property>
-        <value>0</value>
-      </equals>
-    </condition>     
-  </item>
-
-  
-  <item>
-    <name>L/R door positions to</name>
-    <value>CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-left-cmd</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-right-cmd</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
-
-  <item>
-    <name>verify door positions (24 sec)</name>
-    <value>CLOSED</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-left-pos</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-right-pos</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
-  
-  <item>
-    <name>door latch positions to</name>
-    <value>LATCH</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-left-latch-cmd</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-right-latch-cmd</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
-
-  <item>
-    <name>verify door latch positions (6 sec)</name>
-    <value>LATCHED</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-left-latch-pos</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/mechanical/et-door-right-latch-pos</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>     
-  </item>
-  
-  <item>
-    <name>ET umbilical door mode</name>
-    <value>GPC</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/mechanical/et-umbilical-door-mode</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </item>
-
-  <item>
-    <name>OMS burn preparation</name>
-  </item>
-
-  <!-- as before 2 ways button, we label GPC/OPEN instead of GPC -->
-  
-  <item>
-    <name>L/R OMS He pressure and isolation valves A</name>
-    <value>GPC/OPEN</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-A-status</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-A-status</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-
-  <item>
-    <name>L/R OMS He pressure and isolation valves B</name>
-    <value>CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/helium-left-oms-valve-B-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/helium-right-oms-valve-B-status</property>
-          <value>0</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-
-
-  <item>
-   <name>L/R OMS tank isolation valves A</name>
-   <value>GPC/OPEN</value>
-   <condition>
-     <and>
-       <equals>
-         <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-A-status</property>
-         <value>1</value>
-       </equals>
-       <equals>
-         <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-A-status</property>
-         <value>1</value>
-       </equals>
-     </and>
-   </condition>
-  </item>
-
-  <item>
-   <name>L/R OMS tank isolation valves B</name>
-   <value>GPC/OPEN</value>
-   <condition>
-     <and>
-       <equals>
-         <property>/fdm/jsbsim/systems/oms-hardware/tank-left-oms-valve-B-status</property>
-         <value>1</value>
-       </equals>
-       <equals>
-         <property>/fdm/jsbsim/systems/oms-hardware/tank-right-oms-valve-B-status</property>
-         <value>1</value>
-       </equals>
-     </and>
-   </condition>
-  </item>
-
-  <item>
-    <name>L/R OMS crossfeed valves</name>
-    <value>CLOSE</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-A-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-left-oms-valve-B-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-A-status</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/crossfeed-right-oms-valve-B-status</property>
-          <value>0</value>
-        </equals>       
-      </and>
-    </condition>
-  </item>
-
-  <item>
-    <name>OMS burn cue cards</name>
-    <value>INSTALLED</value>
-  </item>
-
-  <item>
-    <name>OMS burn attitude</name>
-  </item>
-
-  <item>
-    <name>ADI attitude</name>
-    <value>INRTL</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/adi/attitude-select</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </item>
-
-  <item>
-    <name>ADI rate</name>
-    <value>HI</value>
-    <condition>
-      <equals>
-        <property>/fdm/jsbsim/systems/adi/rate-range-select</property>
-        <value>1</value>
-      </equals>
-    </condition>
-  </item>
-
-  <item>
-    <name>start maneuver</name>
-    <value>ITEM 27 EXEC</value>
-  </item>
-
-  <item>
-    <name>TIG-2:00: OMS engine ARM/PRESS</name>
-    <value>ON</value>
-    <condition>
-      <and>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/engine-left-arm-cmd</property>
-          <value>1</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/oms-hardware/engine-right-arm-cmd</property>
-          <value>1</value>
-        </equals>
-      </and>
-    </condition>
-  </item>
-  
+  </page>
   
 </PropertyList>

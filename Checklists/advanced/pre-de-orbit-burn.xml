@@ -303,6 +303,11 @@
       <name>verify all input on HORIZ SIT</name>
       <value>SPEC 50 PRO</value>
     </item>
+
+  </page>
+
+  <page>
+
     
     <item>
       <name>OMS burn preparation</name>
@@ -614,9 +619,6 @@
       </condition>
     </item>
 
-  </page>
-
-  <page>
     
     <item>
       <name>Vent door closing</name>
@@ -718,6 +720,11 @@
       <value>ITEM 27 EXEC</value>
     </item>
 
+  </page>
+
+  <page>
+
+    
     <item>
       <name>RCS and OMS heaters configuration</name>
     </item>

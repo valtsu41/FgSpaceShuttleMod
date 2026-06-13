@@ -25,8 +25,7 @@
     <item>
       <name>reassign G2FD strings to another GPC</name>
       <value>ITEM 9+2 EXEC </value>
-      <value>ITEM 14+2 EXEC </value>
-      <value>ITEM 15+0 EXEC </value>
+      <value>ITEM 14+2+0 EXEC </value>
     </item>
 
     <item>
@@ -165,6 +164,9 @@
       </condition>
     </item>
 
+  </page>
+  <page>
+    
     <item>
       <name>Payload bus activation</name>
     </item>
@@ -212,9 +214,6 @@
         </equals>
       </condition>
     </item>
-
-  </page>
-  <page>
     
     <item>
       <name>Aft station configuration</name>
@@ -453,6 +452,9 @@
       </condition>
     </item>
 
+  </page>
+  <page>
+    
     <item>
       <name>Securing BFS</name>
     </item>

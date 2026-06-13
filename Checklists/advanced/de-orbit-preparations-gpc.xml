@@ -220,6 +220,10 @@
       </condition>
     </item>
 
+  </page>
+
+  <page>
+    
     <item>
       <name>Transition GPC 1, 2, 3, 4 to GNC OPS 3</name>
     </item>
@@ -300,9 +304,6 @@
       </condition>
     </item>
 
-  </page>
-
-  <page>
     
     <item>
       <name>BFS synchronization</name>
@@ -374,7 +375,10 @@
       <value>ITEM 23 EXEC</value>
     </item>
 
+  </page>
 
+  <page>
+    
     <item>
       <name>Star tracker deactivation</name>
     </item>

@@ -1,7 +1,9 @@
 <PropertyList>
 
-    <title>Post MECO advanced</title>  
-   
+  <title>Post MECO advanced</title>  
+
+  <page>
+    
     <item>
       <name>If direct insertion</name>
     </item>
@@ -26,8 +28,8 @@
     <item>
       <name>Else OMS-1 burn</name>
     </item>
-      
-      
+    
+    
     <item>
       <name>visually inspect ET</name>
       <value>PHOTOS</value>
@@ -381,6 +383,8 @@
       </condition>  
     </item>
 
+  </page>
+  <page>
     <item>
       <name>Flash evaporator and heaters activation</name>
     </item>
@@ -537,18 +541,18 @@
       <value>OFF</value>
       <condition>
         <or>
-        <equals>
-          <property>/fdm/jsbsim/systems/electrical/ac/ac-bus-snsr</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/electrical/ac[1]/ac-bus-snsr</property>
-          <value>0</value>
-        </equals>
-        <equals>
-          <property>/fdm/jsbsim/systems/electrical/ac[2]/ac-bus-snsr</property>
-          <value>0</value>
-        </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ac/ac-bus-snsr</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ac[1]/ac-bus-snsr</property>
+            <value>0</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ac[2]/ac-bus-snsr</property>
+            <value>0</value>
+          </equals>
         </or>
       </condition>
     </item>
@@ -575,18 +579,20 @@
     </item>
 
     <item>
-    <name>Major mode change</name>        
+      <name>Major mode change</name>        
     </item>
 
     <item>
       <name>GNC major mode</name>
       <value>OPS 105 PRO</value>
       <condition>
-      <equals>
+        <equals>
           <property>/fdm/jsbsim/systems/dps/major-mode</property>
           <value>105</value>
-      </equals>
+        </equals>
       </condition>
     </item>
-    
+
+  </page>    
+
 </PropertyList>

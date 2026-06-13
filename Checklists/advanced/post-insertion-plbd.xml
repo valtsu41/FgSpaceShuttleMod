@@ -205,6 +205,8 @@
       </condition>
     </item>
 
+  </page>
+  <page>  
     <item>
       <name>Open payload bay doors</name>
     </item>
@@ -392,10 +394,6 @@
         </and>
       </condition>
     </item>
-
-  </page>
-
-  <page>
     
     <item>
       <name>Ku-band antenna deployment and activation</name>
@@ -478,6 +476,9 @@
       </condition>
     </item>
 
+  </page>
+  <page>
+    
     <item>
       <name>Post PLBD radiators configuration</name>
     </item>

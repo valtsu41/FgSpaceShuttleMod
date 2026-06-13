@@ -258,6 +258,10 @@
       </condition>      
     </item>
 
+  </page>
+  <page>
+    
+    
     <item>
       <name>Hydraulic and MPS configuration</name>
     </item>
@@ -413,10 +417,6 @@
       </condition>     
     </item>
 
-  </page>
-
-  <page>
-    
     <item>
       <name>Radiators bypass</name>
     </item>
@@ -465,7 +465,8 @@
         </equals>
       </condition>
     </item>
-
+    
+    
     <item>
       <name>Configuration for PLBD closing</name>
     </item>
@@ -577,6 +578,9 @@
       </condition>
     </item>
 
+  </page>
+  <page>
+    
     <item>
       <name>Close payload bay doors</name>
     </item>
