@@ -2,7 +2,6 @@
 
     <title>Post MECO advanced</title>  
    
-  <page>
     <item>
       <name>If direct insertion</name>
     </item>
@@ -151,9 +150,7 @@
         </equals>
       </condition>     
     </item>
-  </page>
 
-  <page>
     <item>
       <name>Post burn status</name>
     </item>
@@ -383,9 +380,7 @@
         </and>
       </condition>  
     </item>
-  </page>
 
-  <page>
     <item>
       <name>Flash evaporator and heaters activation</name>
     </item>
@@ -593,5 +588,5 @@
       </equals>
       </condition>
     </item>
-  </page>
+    
 </PropertyList>

@@ -2,70 +2,67 @@
 
     <title>Pre-launch advanced</title>  
 
-    <page> 
-      <item>
-        <name>Event timer</name>
-      </item>    
+    <item>
+      <name>Event timer</name>
+    </item>    
 
-      <item>
-        <name>set and start a countdown to 9:00</name>
-        <value>SET</value>
-        <condition>
-            <equals>
-              <property>/fdm/jsbsim/systems/timer/timer-set-sec</property>
-              <value>540</value>
-            </equals>
-        </condition>   
-      </item>  
-      
-      <item>
-        <name>Electrical systems check</name>
-      </item>
+    <item>
+      <name>set and start a countdown to 9:00</name>
+      <value>SET</value>
+      <condition>
+          <equals>
+            <property>/fdm/jsbsim/systems/timer/timer-set-sec</property>
+            <value>540</value>
+          </equals>
+      </condition>   
+    </item>  
+    
+    <item>
+      <name>Electrical systems check</name>
+    </item>
 
-      <item>
-        <name>T-8:00 connect essential buses to fuel cells</name>
-        <value>ON</value>
-        <condition>
-          <and>
-            <equals>
-              <property>/fdm/jsbsim/systems/electrical/ess/ess-power-fc-switch</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>/fdm/jsbsim/systems/electrical/ess[1]/ess-power-fc-switch</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>/fdm/jsbsim/systems/electrical/ess[2]/ess-power-fc-switch</property>
-              <value>1</value>
-            </equals>
-          </and>
-        </condition>
-      </item>
+    <item>
+      <name>T-8:00 connect essential buses to fuel cells</name>
+      <value>ON</value>
+      <condition>
+        <and>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess[1]/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/electrical/ess[2]/ess-power-fc-switch</property>
+            <value>1</value>
+          </equals>
+        </and>
+      </condition>
+    </item>
 
-      <item>
-        <name>T-8:00 verify SSME controllers</name>
-        <value>POWERED</value>
-        <condition>
-    <and>
-            <equals>
-              <property>/fdm/jsbsim/systems/mps/engine/controller-power</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>/fdm/jsbsim/systems/mps/engine[1]/controller-power</property>
-              <value>1</value>
-            </equals>
-            <equals>
-              <property>/fdm/jsbsim/systems/mps/engine[2]/controller-power</property>
-              <value>1</value>
-            </equals>
-    </and>
-        </condition>   
-      </item>
-  </page>
+    <item>
+      <name>T-8:00 verify SSME controllers</name>
+      <value>POWERED</value>
+      <condition>
+	<and>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine/controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[1]/controller-power</property>
+            <value>1</value>
+          </equals>
+          <equals>
+            <property>/fdm/jsbsim/systems/mps/engine[2]/controller-power</property>
+            <value>1</value>
+          </equals>
+	</and>
+      </condition>   
+    </item>
 
-  <page>
     <item>
       <name>APU and hydraulics startup</name>
     </item>
@@ -412,9 +409,7 @@
 	</and>
       </condition> 
     </item>
-  </page>
 
-  <page>
     <item>
       <name>Flash evaporator</name>
     </item>
@@ -463,6 +458,5 @@
 	</and>
       </condition>
     </item>
-  </page>
 
 </PropertyList>

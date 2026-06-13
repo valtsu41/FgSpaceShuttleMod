@@ -293,9 +293,8 @@
 	</and>
       </condition>     
     </item>
-  </page>
 
-  <page>
+
     <item>
       <name>Horizontal situation configuration</name>
     </item>
@@ -844,9 +843,8 @@
         </and>
       </condition>
     </item>
-  </page>
+
     
-  <page>
     <item>
       <name>TIG-5:00: start a single APU</name>
     </item>

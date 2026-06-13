@@ -226,9 +226,7 @@
         </and>
       </condition>
     </item>
-  </page>
 
-  <page>
     <item>
       <name>Transition to GNC OPS 303</name>
     </item>
@@ -485,9 +483,7 @@
       <name>ANT SEL</name>
       <value>AUTO</value>
     </item>
-  </page>
 
-  <page>
     <item>
       <name>EI-13:00: remaining APUs start</name>
     </item>
