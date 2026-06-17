@@ -15,6 +15,8 @@ List of current modifications:
 - Experimental new landing sites
 - No automatic gear extension
 - Fixed INRTL ADI yaw
+- Experimental improved nominal MECO or contigency abort detection
+- Dialog for editing component conditions (failures)
 
 ## Installation
 Because some files in this repository are too large to be normal GitHub tracked files, this repository uses Git LFS. You need to have it set up correctly for git cloning to work.
