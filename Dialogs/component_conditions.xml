@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <nasal>
+        <open><![CDATA[
+        var dlg_root = cmdarg();
+        var component_table = gui.findElementByName(dlg_root, "component-table");
+        var tab_buttons = gui.findElementByName(dlg_root, "tab-buttons");
+        var ROWS_PER_COL = 30;
+        var failures_node = props.getNode("/fdm/jsbsim/systems/failures");
+        
+
+        var sections = [failures_node];
+        var nodes = failures_node.getChildren();
+        foreach (node; nodes) {
+            var name = node.getName();
+            if (!string.match(name, "*-condition") and size(node.getChildren()) > 0)
+                sections = append(sections, node);
+        }
+
+        component_table.removeChildren("vrule");
+        component_table.removeChildren("group");
+
+        var row = 0;
+        var col = 0;
+        foreach (section; sections) {
+            component_table.addChild("text").setValues({
+                "row": row,
+                "col": col,
+                "rowspan": 2,
+                "colspan": 2,
+                "label": section.getName()
+            });
+            row += 2;
+
+            var nodes = section.getChildren();
+            foreach (node; nodes) {
+                var name = node.getName();
+                if (!string.match(name, "*-condition")) continue; 
+
+                component_table.addChild("text").setValues({
+                    "row": row,
+                    "col": col+0,
+                    "halign": "right",
+                    "label": left(name, size(name)-size("-condition"))
+                });
+                component_table.addChild("slider").setValues({
+                    "row": row,
+                    "col": col+1,
+                    "halign": "left",
+                    "property": node.getPath(),
+                    "min": 0.0,
+                    "max": 1.0,
+                    "step": 1.0,
+                    "fraction": 0.5
+                });
+
+                row = row + 1;
+                if (row >= ROWS_PER_COL) {
+                    row = 0;
+                }
+                if (row == 0) {
+                    col += 2
+                }
+            }
+        }
+        ]]></open>
+    </nasal>
+    <name>component-conditions</name>
+    <layout>vbox</layout>
+    <default-padding>3</default-padding>
+
+    <group>
+        <layout>hbox</layout>
+        <default-padding>1</default-padding>
+        <text>
+            <label>Component Conditions</label>
+        </text>
+        <empty>
+            <stretch>true</stretch>
+        </empty>
+        <button>
+            <legend>X</legend>
+            <key>Esc</key>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+
+    <hrule />
+
+    <group>
+        <layout>hbox</layout>
+        <name>tab-buttons</name>
+        <default-padding>5</default-padding>
+    </group>
+
+    <hrule />
+
+    <group>
+        <layout>table</layout>
+        <name>component-table</name>
+        <default-padding>3</default-padding>
+        <!-- Filled dynamically -->
+    </group>
+
+    <hrule />
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>OK</legend>
+            <default>true</default>
+            <equal>true</equal>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>Apply</legend>
+            <equal>true</equal>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>Refresh</legend>
+            <equal>true</equal>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+        <button>
+            <legend>Close</legend>
+            <equal>true</equal>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+</PropertyList>

@@ -2874,6 +2874,14 @@
       </item>
 
       <item>
+       <label>Component Conditions</label>
+       <binding>
+        <command>nasal</command>
+        <script>SpaceShuttle.component_conditions_dlg.open()</script>
+       </binding>
+      </item>
+
+      <item>
         <label>Switch Covers</label>
         <binding>
             <command>nasal</command>
@@ -3535,4 +3543,3 @@ Note that devlopment is ongoing and not all features are documented.
   <!--<mission include="Mission/mission.xml"/>-->
 
 </PropertyList>
-
